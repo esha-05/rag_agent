@@ -1,10 +1,10 @@
-# 📄 Challenge B — AI PDF Summarization & QA Agent (RAG System)
+# AI PDF Summarization & QA Agent (RAG System)
 
 An AI-powered Retrieval-Augmented Generation (RAG) system that reads a PDF, indexes it with vector embeddings, and answers user questions using only the document's content. Powered by **Groq (Llama 3.3 70B)**, **FAISS**, and **Sentence Transformers**.
 
 ---
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -51,7 +51,7 @@ An AI-powered Retrieval-Augmented Generation (RAG) system that reads a PDF, inde
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 ai-pdf-rag-agent/
@@ -66,7 +66,7 @@ ai-pdf-rag-agent/
 
 ---
 
-## ⚙️ Dependencies
+##  Dependencies
 
 | Package | Version | Purpose |
 |---|---|---|
@@ -82,7 +82,7 @@ ai-pdf-rag-agent/
 
 ---
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### 1. Prerequisites
 - Python 3.9+
@@ -110,7 +110,7 @@ source venv/bin/activate
 
 ### 4. Install dependencies
 
-> ⚠️ First run downloads the `all-MiniLM-L6-v2` embedding model (~80MB). This is cached after that.
+> First run downloads the `all-MiniLM-L6-v2` embedding model (~80MB). This is cached after that.
 
 ```bash
 python -m pip install -r requirements.txt
@@ -136,7 +136,7 @@ Visit **http://127.0.0.1:8001** in your browser.
 
 ---
 
-## 🖥️ How to Run
+## How to Run
 
 ```bash
 # Start server
@@ -157,7 +157,7 @@ curl -X POST http://localhost:8001/summarize
 
 ---
 
-## 📥 Example Input / Output
+##  Example Input / Output
 
 **Step 1 — Upload PDF:**
 ```
@@ -191,7 +191,7 @@ Output:
 
 ---
 
-## 🧠 Design Decisions & Trade-offs
+##  Design Decisions & Trade-offs
 
 | Decision | Reason | Trade-off |
 |---|---|---|
@@ -205,7 +205,7 @@ Output:
 
 ---
 
-## 📡 API Endpoints
+##  API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -218,13 +218,13 @@ Output:
 
 ---
 
-## 💡 RAG Explained Simply
+##  RAG Explained Simply
 
 > Instead of feeding the entire PDF to the LLM (impossible for long docs), we convert every chunk of text into a mathematical vector (embedding). When you ask a question, we convert it to the same kind of vector, then find the 4 chunks whose vectors are closest in meaning. Only those 4 chunks go to the LLM — so it answers precisely from the right section of the document.
 
 ---
 
-## ⚠️ Known Limitations
+##  Known Limitations
 
 - Only one PDF is held in memory at a time — uploading a new PDF replaces the previous index
 - FAISS index is not persisted to disk; server restart requires re-uploading the PDF
@@ -232,7 +232,7 @@ Output:
 
 ---
 
-## 🔒 .gitignore
+##  .gitignore
 
 ```
 .env
